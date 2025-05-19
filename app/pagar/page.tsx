@@ -9,7 +9,7 @@ type Props = {
 };
 
 
-export default function Charge({ searchParams, ...props }: Props) {
+export default function Charge({ searchParams }: Props) {
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -22,21 +22,6 @@ export default function Charge({ searchParams, ...props }: Props) {
           <Suspense fallback={<PaymentSectionSkeleton/>}>
             <PaymentSectionWrapper payload={searchParams}/>
           </Suspense>
-          {/* <PaymentTabs data={pixData}>
-            <div key="footer" className="mt-6 text-center">
-              <p className="text-xs text-gray-500">
-                Made with ❤️ by{" "}
-                <a
-                  href="https://github.com/victorgrodriguesm7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-600 hover:text-primary-700 transition-colors"
-                >
-                  victorgrodriguesm7
-                </a>
-              </p>
-            </div>
-          </PaymentTabs> */}
         </div>
       </div>
     </div>

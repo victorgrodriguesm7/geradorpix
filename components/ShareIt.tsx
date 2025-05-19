@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Link } from 'lucide-react';
+import { Link } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 interface CopyButtonProps {

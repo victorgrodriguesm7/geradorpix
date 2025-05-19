@@ -1,6 +1,5 @@
 import { GeradorPix } from "@/@types/geradorPix";
 import { formatCurrency } from "@/utils/formatters";
-import { Link } from "lucide-react";
 import ShareIt from "./ShareIt";
 import { headers } from "next/headers";
 
