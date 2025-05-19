@@ -21,6 +21,9 @@ const Navbar: React.FC = () => {
           <Link href="#faq" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
             FAQ
           </Link>
+          <a href="https://github.com/victorgrodriguesm7/pixapi" className="text-gray-700 hover:text-primary-600 transition-colors font-medium">
+            Para DEVs
+          </a>
         </nav>
         
         <Link 
