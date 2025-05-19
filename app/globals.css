@@ -1,1 +1,93 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary-*: initial;
+
+    --color-primary-50: #f0fdf6;
+    --color-primary-100: #dcfce9;
+    --color-primary-200: #bbf7d6;
+    --color-primary-300: #86efbb;
+    --color-primary-400: #4ade97;
+    --color-primary-500: #22c573;
+    --color-primary-600: #00AA5B;
+    --color-primary-700: #108353;
+    --color-primary-800: #0f674a;
+    --color-primary-900: #0c543e;
+    --color-primary-950: #042f21;
+
+    --color-secondary-*: initial;
+    --color-secondary-50: #eef6ff;
+    --color-secondary-100: #d9eaff;
+    --color-secondary-200: #bcd7ff;
+    --color-secondary-300: #8ebeff;
+    --color-secondary-400: #599eff;
+    --color-secondary-500: #2D81FF;
+    --color-secondary-600: #1a63ff;
+    --color-secondary-700: #0c4def;
+    --color-secondary-800: #1841d3;
+    --color-secondary-900: #1a3aa6;
+    --color-secondary-950: #152563;
+
+    --color-sucess-*: initial;
+    --color-sucess-500: #10b981;
+    --color-sucess-600: #059669;
+
+    --color-warning-*: initial;
+    --color-warning-500: #f59e0b;
+    --color-warning-600: #d97706;
+
+    --color-error-*: initial;
+    --color-error-500: #ef4444;
+    --color-error-600: #dc2626;
+
+    --animate-fade-in: fadeIn 0.3s ease-out;
+    --animate-slide-up: slideUp 0.5s ease-out
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(20px);
+            opacity: 0
+        }
+
+        100% {
+            transform: translateY(0px);
+            opacity: 1
+        }
+    }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-400;
+  }
+
+  .input {
+    @apply block w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+
+  .card {
+    @apply rounded-xl bg-white p-6 shadow-md;
+  }
+
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
