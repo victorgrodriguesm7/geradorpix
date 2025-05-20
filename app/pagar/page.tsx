@@ -3,7 +3,7 @@ import PaymentHeader from "@/components/PaymentHeader";
 import { PaymentSectionSkeleton } from "@/components/PaymentSectionSkeleton";
 import { PaymentSectionWrapper } from "@/components/PaymentSectionWrapper";
 import { formatCurrency } from "@/utils/formatters";
-import { getPixData } from "@/utils/pix";
+import { getPixUrlImage } from "@/utils/pix";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import { Suspense } from "react";
@@ -26,27 +26,19 @@ export async function generateMetadata({
     description += ` de ${formatCurrency(payload.amount)}!`;
   else description += "!";
 
-  try {
-    const pixData = await getPixData(payload);
+  const image = getPixUrlImage(payload);
 
-    return {
-      metadataBase: url,
+  return {
+    metadataBase: url,
+    title,
+    description,
+    openGraph: {
       title,
-      description,
-      openGraph: {
-        title,
-        type: "website",
-        images: pixData.image,
-        url
-      },
-    };
-  } catch {
-    return {
-      metadataBase: url,
-      title,
-      description
-    };
-  }
+      type: "website",
+      images: image,
+      url
+    },
+  };
 }
 
 export default function Charge({ searchParams }: Props) {
